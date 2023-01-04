@@ -21,18 +21,18 @@ function deleteTask(task) {
     const indexOfTask = tasksList.indexOf(task);
 
     if(indexOfTask !== -1) {
-        tasksList.splice(indexOfTask, 1);
-        return;
+        return tasksList.splice(indexOfTask, 1);
     }
 
-    console.log('Завдання не знайдено!')
+    console.log('Завдання не знайдено!');
+    return false;
 }
 
 function putTaskOnStart(task) {
-    const indexOfTask = tasksList.indexOf(task);
-    if(indexOfTask !== -1) {
-        const elemForReplacing = tasksList.splice(indexOfTask, 1);
-        tasksList.unshift(elemForReplacing[0]);
+    let taskToReplace = deleteTask(task);
+
+    if (taskToReplace) {
+        tasksList.unshift(taskToReplace[0]);
         return;
     }
 
