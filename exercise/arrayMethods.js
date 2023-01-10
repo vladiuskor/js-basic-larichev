@@ -19,6 +19,8 @@ let resultExercise1 = prices.map(elem => {
 console.log('Результат першого завдання:', resultExercise1);
 
 
+
+
 /*
     Exercise 2
     ----------
@@ -35,3 +37,21 @@ const average = arr.reduce((acc, value, index) => {
 }, 0);
 
 console.log('Результат другого завдання:', average);
+
+
+
+
+/*
+    Exercise 3
+    ----------
+    Написати функцію, яка повертає true, якщо елемент є та false, якщо нема.
+ */
+
+const elementsLIst = [2, 4, 4, 10, 20];
+
+function some(elementToFind, arr) {
+    let result = arr.find(elem => elem === elementToFind);
+    return Boolean(result);
+}
+
+console.log('Результат третього завдання:', some(2, elementsLIst));
