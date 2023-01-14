@@ -21,6 +21,6 @@ const users = [
 console.table(users.map(elem => {
     return {
         fullName: `${elem.name} ${elem.surname}`,
-        skillNum: `${elem.skills.length}`
+        skillNum: elem.skills.length
     }
 }));
