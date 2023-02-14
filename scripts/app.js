@@ -17,7 +17,8 @@ const page = {
         nextDay: document.querySelector('.habbit__day')
     },
     popup: {
-        index: document.getElementById('add-habbit-popup')
+        index: document.getElementById('add-habbit-popup'),
+        iconFiled: document.querySelector('.popup__form input[name="icon"]')
     }
 }
 
@@ -151,6 +152,14 @@ function deleteDay(index) {
     });
     rerender(globalActiveHabbitId);
     saveData();
+}
+
+// Working with habbits
+function setIcon(context, icon) {
+    page.popup.iconFiled.value = icon;
+    const activeIcon = document.querySelector('.icon.icon_active');
+    activeIcon.classList.remove('icon_active');
+    context.classList.add('icon_active');
 }
 
 // Init
